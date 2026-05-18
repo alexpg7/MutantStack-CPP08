@@ -1,11 +1,24 @@
 #include "easyfind.hpp"
 #include <iostream>
+#include <vector>
 
 int main(void)
 {
-	int	*list = new int[5]();
+	std::vector<int> vec = {1, 2, 3, 4, 5};
 
-	for (int i = 0; i < 5; i++)
-		list[i] = i;
-	std::cout << "Find \"4\": " << easyfind(list, 4) << std::endl;
+	std::cout << "Try to find \"4\": " << std::endl;
+	std::vector<int>::iterator it = easyfind(vec, 4);
+	int index = std::distance(vec.begin(), it);
+	std::cout << *it << "Found in " << index << " index" << std::endl;
+
+	std::cout << "Try to find \"10\": " << std::endl;
+	try
+	{
+		it = easyfind(vec, 10);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
 }

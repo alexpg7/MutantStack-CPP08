@@ -1,16 +1,13 @@
 #pragma once
-#include <iostream>>
+#include <iostream>
+#include <algorithm>
+#include <exception>
 
-template <typename T> int easyfind(T container, int n)
+template <typename T> typename T::iterator easyfind(T& container, int n)
 {
-	unsigned int	i = 0;
+	typename T::iterator it = std::find(container.begin(), container.end(), n);
 
-	while (container[i])
-	{
-		std::cout << container[i] << std::endl;
-		if (container[i] == n)
-			return (i);
-		i++;
-	}
-	return (-1);
+	if (it == container.end())
+		throw std::exception();
+	return it;
 }
