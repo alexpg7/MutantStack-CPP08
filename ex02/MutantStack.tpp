@@ -19,3 +19,31 @@ template <typename T> MutantStack<T>& MutantStack<T>::operator=(const MutantStac
 		return (*this);
 	return (*this);
 }
+
+template <typename T> MutantStack<T>::iterator	begin(void)
+{
+
+}
+template <typename T> MutantStack<T>::iterator	end(void)
+{
+
+}
+
+template <typename T> MutantStack<T>::iterator::iterator()
+{
+}
+
+template <typename T> MutantStack<T>::iterator::iterator(const MutantStack<T>::iterator& copy)
+{
+	*this = copy;
+}
+template <typename T> MutantStack<T>::iterator::~iterator()
+{
+}
+
+template <typename T> MutantStack<T>& MutantStack<T>::iterator::operator=(const MutantStack<T>& copy)
+{
+	if (this == &copy)
+		return (*this);
+	return (*this);
+}
